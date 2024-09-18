@@ -128,62 +128,29 @@
 <body onload="noBack()" onpageshow="if (event.persisted) noBack();">
 <div class="lmain">
     <div class="navbar">
-        <a href="{% url 'content:main' %}">home</a>        
+        <a href="index.html">home</a>        
     </div>  
     <div class="container">
         <form id="form"  method = POST >
             {% csrf_token %}
             <div class="btn-group">
-                <a href="{% url 'login' %}"><button type="button" class="btx" style="border-left:none;" onclick="dis()" >LOG IN</button></a>
-                <a href="{% url 'register' %}"><button type="button" class="btx" onclick="dis2()" >SIGN UP</button></a>
+                <a href="login.html"><button type="button" class="btx" style="border-left:none;" onclick="dis()" >LOG IN</button></a>
+                <a href="register.html"><button type="button" class="btx" onclick="dis2()" >SIGN UP</button></a>
             </div>            
             <div id="fo2">
-                <label>Email Id</label>
-                {{form.email}}
-                <label>Username</label>
-                {{form.username}}
-				<div>
-					<p>choose your future:</p>
-					  <input type="radio" id="html" name="aim" value="JEE">
-					  <label for="html">JEE</label><br>
-					  <input type="radio" id="css" name="aim" value="NEET">
-					  <label for="css">NEET</label><br>
-				</div>
-				<select name="classs" id="options" >
-					<option value="11">11</option>
-					<option value="12">12</option>
-				  </select>				
-                <label>Create Password</label>
-				{{form.password1}}
-                <label>Confirm Password</label>
-				{{form.password2}}				
-                <button class="button" type="submit" onclick="s()">Sign Up</button>
-            </div>
-			{% if form.errors %}
-			{% for field in form %}
-				{% for error in field.errors %}
-					<div class="alert alert-danger">
-						<strong>{{ error|escape }}</strong>
-					</div>
-				{% endfor %}
-			{% endfor %}
-			{% for error in form.non_field_errors %}
-				<div class="alert alert-danger">
-					<strong>{{ error|escape }}</strong>
-				</div>
-			{% endfor %}
-		{% endif %}		
-            <h2>{{info}}</h2>
-            <h2>{{error}}</h2>
-        </form>
+		    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" required>
+		    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+	            <label for="conpsw"><b>Username</b></label>
+                    <input type="password" placeholder="Confirm Password" name="conpsw" required>       
+	</form>
     </div>
 	
 </div>
-    <footer>
-        <div class="copyright">
-            <p class="mag0"> © 2020 toolbox.co.in</p>
-        </div>
-    </footer>
 </body>
 <script>
     window.history.forward();
