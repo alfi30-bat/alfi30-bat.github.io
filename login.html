@@ -135,35 +135,23 @@
 <body onload="noBack()" onpageshow="if (event.persisted) noBack();">
 <div class="lmain">
     <div class="navbar">
-        <a href="{% url 'content:main' %}">home</a>        
+        <a href="index.html">home</a>        
     </div>  
     <div class="container">
         <form id="form"  method = "POST">
             {% csrf_token %}
             <div class="btn-group">
-                <a href="{% url 'login' %}"><button type="button" class="btx" style="border-left:none;" onclick="dis()" >LOG IN</button></a>
-                <a href="{% url 'register' %}"><button type="button" class="btx" onclick="dis2()" >SIGN UP</button></a>
+                <a href="login.html"><button type="button" class="btx" style="border-left:none;" onclick="dis()" >LOG IN</button></a>
+                <a href="register.html"><button type="button" class="btx" onclick="dis2()" >SIGN UP</button></a>
             </div>            
             <div id="fo1">  
-                {{form}}   
+                    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
                 <button class="button" type="submit">Log In</button>
             </div>
-			{% if form.errors %}
-			{% for field in form %}
-				{% for error in field.errors %}
-					<div class="alert alert-danger">
-						<strong>{{ error|escape }}frefe</strong>
-					</div>
-				{% endfor %}
-			{% endfor %}
-			{% for error in form.non_field_errors %}
-				<div class="alert alert-danger">
-					<strong>{{ error|escape }}</strong>
-				</div>
-			{% endfor %}
-		{% endif %}	            
-            <h2>{{info}}</h2>
-            <h2>{{error}}</h2>
         </form>
     </div>
 </div>
