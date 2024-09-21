@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.container{
+    display: grid;
+    grid-template-rows: 11vw auto 1fr;
+    grid-template-columns: 0.2fr 4fr 1fr;
+    height: 100vh;
+    grid-template-areas: 
+    "left-aside  header  header"
+    "left-aside  banner  right-aside"
+    "left-aside  main    right-aside ";
+
+    font-weight: 600;
+    font-size: 20px;
+
+}
+.bar{
+    float: left;
+    font-size: 1.5vw;
+    margin: 1%;
+    margin-left: 6%;
+    cursor: pointer;
+    color: darkslategray;
+}
+.bar:hover{
+    text-decoration: underline;
+    text-underline-offset: 1vw;
+    color: aqua;
+}
+.btx{
+    float: left;
+    font-size: 1.5vw;
+    margin: 1%;
+    margin-left: 6%;
+    cursor: pointer;
+    background-color: unset;
+    margin-top: 10%;
+    padding: 3%;
+    border-radius: 10px;
+}
+.btx:hover{
+    border-color: blue;
+}
+.btx2{
+    margin-left: 20%;    
+    margin-top: 10%;
+    padding: 3%; 
+    border-color: blue;
+    background-color: blue;
+    border-radius: 10px;
+}
+.btx2:hover{
+    padding: 4%;
+    border-color: blue;
+}
+.icon:hover{
+    border-color: white;
+    border-radius: 100%;
+}
+.text{
+    transition: transform 0.7s;
+}
+.text:hover{
+    transform: scale(1.2);
+}
+.card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 8px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+        }
+        .caard {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 0px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .caard img {
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+        }
+        .contaainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }    
+            
+@media (max-width:678px){
+.container{
+    grid-template-rows: 50px 50px 50px 1fr 50px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header"
+    "banner"
+    "left-aside"
+    "main"
+    "right-aside";
+}
+}
+</style>
+<body onload="loadd()" style="background-color: #e4e3e3; margin: 0px;">
+    <div class="container">
+    <div style="grid-area: header;">
+        <h1>courses</h1>
+        <hr style="width: 100%;">
+    </div>
+
+    <div id="ban" style="grid-area: banner;">
+        <a class="bar">all</a> 
+        <a class="bar">advertising</a> 
+        <a class="bar">Design</a> 
+        <a class="bar">Marketting</a> 
+        <a class="bar">illustration</a> 
+        <a class="bar">brand</a> 
+        <hr width="90%"> 
+    </div>
+    <div style="grid-area: left-aside; background-color: aqua; padding: 17%;">
+        <img src="icon.png" width="20px" height="20px" class="icon" style="margin-top: 5vh;">
+        <img src="icon.png" width="20px" height="20px" class="icon" style="margin-top: 5vh;">
+        <img src="icon.png" width="20px" height="20px" class="icon" style="margin-top: 5vh;">
+    </div>    
+
+    <div style="grid-area: main;">
+        <div style="margin: 5%; background-color: white; border-radius: 10px; padding: 11%; padding-top: 5%;">
+            <img src="main1.png" style="float: left;" height="200px " width="200px" class="text">
+            <div style="margin-left: 50%; margin-top: 5%;">
+                <h2>html for begners</h2>
+                <p>rkgdkfjgkf</p>
+                <button style="float: left;" class="btx">html</button>
+                <button style="float: left;" class="btx">web</button>
+                <button class="btx2">&rarr;</button>
+            </div>    
+        </div>
+        <div id="card-container"></div>
+    </div>
+    <div style="grid-area: right-aside;">
+        <div>
+            <h2 style="float: left;">july 2024</h2>
+            <h3 style="color: deepskyblue;">show month</h3>
+            <div style="padding: 8%; background-color: white; border-radius: 10px; font-size: 0.8vw; display: grid; grid-template-columns: repeat(7, 10px); grid-template-rows: repeat(1, 10px); gap: 10px;">
+                <div>SUN</div>
+                <div>MON</div>
+                <div>TUE</div>
+                <div>WED</div>
+                <div>THU</div>
+                <div>FRI</div>
+                <div>SAT</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+
+            </div>
+        </div>
+        <div>
+            <p style="float: left; font-size: 1vw;">mentor</p>
+            <p style="color: deepskyblue; font-size: 1vw; margin-left: 9%;">see all</p>
+            <div style=" background-color: white; border-radius: 10px; font-size: 0.8vw; display: grid; grid-template-columns: repeat(1, 10px); grid-template-rows: repeat(2, 10px); gap: 1vw;">
+                <div class="contaainer">
+                    <div class="card">
+                        <img src="mentor1.jpg" alt="Mentor 1">
+                        <h3>John Doe</h3>
+                        <p>Experience: 10 years</p>
+                        <p>Field: Photography</p>
+                    </div>
+                    <div class="caard">
+                        <img src="icon.png" alt="Mentor 2">
+                        <h3 style="float: left;">Jane Smith</h3>
+                        <p style="float: left;">Experience: 8 years</p>
+                        <p>Field: Graphic Design</p>
+                    </div>
+                    <div class="caard">
+                        <img src="icon.png" alt="Mentor 3">
+                        <h3>Michael Brown</h3>
+                        <p>Experience: 12 years</p>
+                        <p>Field: Software Development</p>
+                    </div>
+                    <div class="caard">
+                        <img src="icon.png" alt="Mentor 4">
+                        <h3>Emily Davis</h3>
+                        <p>Experience: 7 years</p>
+                        <p>Field: Marketing</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+        <div style="margin-top: 44%; font-size: 1.5vw;">
+            <div>
+            <p style="float: left; font-size: 1.7vw;">learning progress</p>
+            <p style="color: deepskyblue; font-size: 1vw; float: left;">see all</p>
+            </div>
+            <div style="background-color: white; border-radius: 10px;box-shadow: 6px 6px 5px #f5f5f5ef; padding: 15%;  ">
+                <label for="file">Python developers</label>
+                <progress id="file" value="32" max="100">32%</progress>
+                <label for="file">Python developers</label>
+                <progress id="file" value="32" max="100">32%</progress>
+            </div>
+
+        </div>
+    </div>    
+</div>
+</body>
+<script>
+    document.querySelector('.text').innerText = 'New Text Here';
+// Sample data list
+const dataList = [
+    { title: "Card 1", description: "This is the first card." , Imag: "main2.png"},
+    { title: "Card 2", description: "This is the second card."  , Imag: "main2.png"},
+    { title: "Card 3", description: "This is the third card." , Imag: "main2.png" }
+];
+
+// Function to create a card element
+function createCard(data) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    
+    const title = document.createElement('h2');
+    title.textContent = data.title;
+    card.appendChild(title);
+
+    const immg = document.createElement('img');
+    immg.src = data.Imag;
+    immg.height = "100px"
+    immg.width = "100px"
+    card.appendChild(immg);
+
+    const description = document.createElement('p');
+    description.textContent = data.description;
+    card.appendChild(description);
+    
+    return card;
+}
+
+// Function to display cards
+function displayCards(dataList) {
+    const container = document.getElementById('card-container');
+    dataList.forEach(data => {
+        const card = createCard(data);
+        container.appendChild(card);
+    });
+}
+
+// Call the function to display cards
+displayCards(dataList);
+
+</script>
+</html>
